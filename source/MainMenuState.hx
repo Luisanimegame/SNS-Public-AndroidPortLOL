@@ -180,6 +180,10 @@ class MainMenuState extends MusicBeatState
 		/*#if debug
 		FlxG.save.data.character = 0;
 		#end*/
+		
+		#if android
+                addVirtualPad(UP_DOWN, A_B);
+                #end
 
 		super.create();
 		Conductor.changeBPM(102);

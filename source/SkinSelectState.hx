@@ -165,6 +165,10 @@ class SkinSelectState extends MusicBeatState
 
         curSkin = FlxG.save.data.activeSkin;
         displaySkin(skinList[curSkin]);
+        
+        #if android
+                addVirtualPad(LEFT_RIGHT, A_B);
+                #end
 
         super.create();
 

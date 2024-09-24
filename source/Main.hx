@@ -92,7 +92,7 @@ class Main extends Sprite
 		 
 		#end
 
-		#if !mobile
+		#if !windows
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsCounter);
 		toggleFPS(FlxG.save.data.fps);
