@@ -176,14 +176,14 @@ class MainMenuState extends MusicBeatState
 			controls.setKeyboardScheme(KeyboardScheme.Duo(true), true);
 
 		changeItem();
-
-		/*#if debug
-		FlxG.save.data.character = 0;
-		#end*/
 		
 		#if android
                 addVirtualPad(UP_DOWN, A_B);
                 #end
+
+		/*#if debug
+		FlxG.save.data.character = 0;
+		#end*/
 
 		super.create();
 		Conductor.changeBPM(102);
