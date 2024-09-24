@@ -91,12 +91,10 @@ class Main extends Sprite
 		 });
 		 
 		#end
-
-		#if !windows
+			
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsCounter);
 		toggleFPS(FlxG.save.data.fps);
-		#end
 	}
 
 	var game:FlxGame;
