@@ -83,16 +83,8 @@ class Main extends Sprite
 		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
 		#end
 		addChild(game);
-		#if windows
-		DiscordClient.initialize();
-
-		Application.current.onExit.add (function (exitCode) {
-			DiscordClient.shutdown();
-		 });
-		 
-		#end
-
-		#if !mobile
+		
+		#if !windows
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsCounter);
 		toggleFPS(FlxG.save.data.fps);
