@@ -27,11 +27,7 @@ class MainMenuState extends MusicBeatState
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
-	#if !switch
 	var optionShit:Array<String> = ['story mode', 'freeplay', 'credits', 'options'];
-	#else
-	var optionShit:Array<String> = ['story mode', 'freeplay'];
-	#end
 
 	var newGaming:FlxText;
 	var newGaming2:FlxText;
@@ -178,7 +174,6 @@ class MainMenuState extends MusicBeatState
         #end
 
 		super.create();
-		Conductor.changeBPM(102);
 	}
 
 	var selectedSomethin:Bool = false;
