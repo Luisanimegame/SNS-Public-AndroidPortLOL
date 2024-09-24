@@ -160,7 +160,7 @@ class MainMenuState extends MusicBeatState
 
 		firstStart = false;
 
-		FlxG.camera.follow(camFollow, null, 0.60 * (60 / FlxG.save.data.fpsCap));
+		FlxG.camera.follow(camFollow, null, 0.60);
 
 		var versionShit:FlxText = new FlxText(5, FlxG.height - 18, 0, gameVer +  (Main.watermarks ? " FNF - " + kadeEngineVer + " Kade Engine" : ""), 12);
 		versionShit.scrollFactor.set();
@@ -168,22 +168,14 @@ class MainMenuState extends MusicBeatState
 		add(versionShit);
 
 		// NG.core.calls.event.logEvent('swag').send();
-
-
-		if (FlxG.save.data.dfjk)
-			controls.setKeyboardScheme(KeyboardScheme.Solo, true);
-		else
+		
 			controls.setKeyboardScheme(KeyboardScheme.Duo(true), true);
 
 		changeItem();
 		
 		#if android
-                addVirtualPad(UP_DOWN, A_B);
-                #end
-
-		/*#if debug
-		FlxG.save.data.character = 0;
-		#end*/
+        addVirtualPad(UP_DOWN, A_B);
+        #end
 
 		super.create();
 		Conductor.changeBPM(102);
